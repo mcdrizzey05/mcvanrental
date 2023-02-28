@@ -1,1 +1,19 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col py-4">
+      <h1><%= @offer.title %></h1>
+    </div>
+      <div class="row">
+      <div class="col"><%= image_tag (@offer.img_url), class: "card-img-offers"%></div>
+        <div class="col">
+          <h3><%= @offer.description %></h3>
+          <h5>Located in:<%= @offer.location %></h5>
+          <h5>Price: €<%= @offer.price %>/night</h5>
+          <%= simple_form_for [@offer, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.submit "Book now" %>
+          <% end %>
+        </div>
+  </div>
+</div>

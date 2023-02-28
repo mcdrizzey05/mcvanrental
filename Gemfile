@@ -78,3 +78,6 @@ end
 
 # Add devise gem
 gem "devise"
+
+# Gem to choose date when booking
+gem 'bootstrap-datepicker-rails'
