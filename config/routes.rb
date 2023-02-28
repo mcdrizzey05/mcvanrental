@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "offers#index"
-  resources :offers
+  resources :offers do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "users/:id", to: "users#show"
   # Defines the root path route ("/")
