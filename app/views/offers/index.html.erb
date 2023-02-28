@@ -1,0 +1,9 @@
+<ul>
+  <% @offers.each do |offer| %>
+    <li>
+      <%= link_to offer.title, offer_path(offer.id) %>
+      <p><% offer.description %></p>
+      <%= image_tag (offer.img_url)%>
+    </li>
+  <% end %>
+</ul>
