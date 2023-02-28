@@ -2,14 +2,14 @@
   <div class="container-fluid">
     <div class="container-logo d-flex">
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://static.vecteezy.com/system/resources/previews/004/852/840/non_2x/caravan-camper-travel-line-icon-illustration-logo-template-suitable-for-many-purposes-free-vector.jpg" %>
+        <%= image_tag "https://static.vecteezy.com/system/resources/previews/004/852/840/non_2x/caravan-camper-travel-line-icon-illustration-logo-template-suitable-for-many-purposes-free-vector.jpg", class: "rounded-circle" %>
       <p class="logo-text">mcvanrental</p>
       <% end %>
     </div>
 
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group d-flex">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <input class="form-control string required rounded-input" type="text" name="search[query]" id="search_query" />
     <button name="button" type="submit" class="btn btn-flat d-flex searchbtn">
       <i class="fas fa-search"></i> Search
     </button>
