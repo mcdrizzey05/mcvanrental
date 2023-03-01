@@ -2,7 +2,7 @@
 <div class="col py-4"><h1> My bookings</h1></div>
 <div class="card-trip">
     <% @bookings.each do |booking| %>
-      <%= image_tag (booking.offer.img_url), class: "card-img-top"%>
+      <%= cl_image_tag booking.offer.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
         <div class="card-trip-infos">
           <div>
             <h2> <%= booking.offer.title%> </h2>
