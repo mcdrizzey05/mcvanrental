@@ -35,7 +35,7 @@
             <%= image_tag "https://avatars.githubusercontent.com/u/122232541?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Messages", "#", class: "dropdown-item" %>
-              <%= link_to "View my bookings", "/bookings/:id", class: "dropdown-item" %>
+              <%= link_to "View my bookings", "/bookings", class: "dropdown-item" %>
               <%= link_to "Host your van", "#", class: "dropdown-item" %>
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
