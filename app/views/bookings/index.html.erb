@@ -1,0 +1,10 @@
+<h1> My bookings</h1>
+
+<%  @bookings.each do |booking| %>
+ <%= booking.offer.title%>
+<%= image_tag (booking.offer.img_url), class: "card-img-top"%>
+ <p>From: <%= booking.start_date %></p>
+ <p>To: <%= booking.end_date %></p>
+ <% end %>
+
+<%= link_to "Back to offers", offers_path %>
