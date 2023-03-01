@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   def index
-    @offers = Offer.where
+    @offers = Offer.all
   end
 
   def show
@@ -12,7 +12,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.user = current_user
     if @offer.save!
-      redirect_to offers_path
+      redirect_to offer_path(@offer)
     else
       render :new, status: :unprocessable_entity
     end
