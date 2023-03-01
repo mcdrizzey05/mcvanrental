@@ -5,8 +5,8 @@
       <%= cl_image_tag booking.offer.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
         <div class="card-trip-infos">
           <div>
-            <h2> <%= booking.offer.title%> </h2>
-            <p>Short description here!</p>
+            <h2><%= booking.offer.title%></h2>
+            <p><%= booking.offer.description %></p>
           </div>
           <h2 class="card-trip-pricing"> <%= booking.offer.price %> € </h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
