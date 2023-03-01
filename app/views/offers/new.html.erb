@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row py-4">
+    <h1>Add your offer</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= form_with(model: @offer) do |f| %>
+        <div class="card">
+          <div class="card-body">
+
+            <div class="mb-3">
+              <%= f.label :title, { class: "form-label"} %>
+              <%= f.text_field :title, { class: "form-control", placeholder: "Name of your offer" } %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :description, { class: "form-label"} %>
+              <%= f.text_field :description, { class: "form-control", placeholder: "Describe your offer in a few sentences" } %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :price, { class: "form-label"} %>
+              <%= f.text_field :price, { class: "form-control", placeholder: "Enter the nightly price" } %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :img_url, { class: "form-label"} %>
+              <%= f.text_field :img_url, { class: "form-control", placeholder: "Enter the URL of your image" } %>
+            </div>
+
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

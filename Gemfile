@@ -79,5 +79,6 @@ end
 # Add devise gem
 gem "devise"
 
-# Gem to choose date when booking
-gem 'bootstrap-datepicker-rails'
+# Bootstrap forms
+gem "bootstrap", "~> 5.0"
+gem "bootstrap_form", "~> 5.1"
