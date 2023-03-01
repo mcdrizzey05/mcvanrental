@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   def index
-    @offers = Offer.where(user: current_user)
+    @offers = Offer.where
   end
 
   def show
