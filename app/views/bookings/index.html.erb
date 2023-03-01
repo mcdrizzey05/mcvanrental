@@ -1,10 +1,17 @@
-<h1> My bookings</h1>
-
-<%  @bookings.each do |booking| %>
- <%= booking.offer.title%>
-<%= image_tag (booking.offer.img_url), class: "card-img-top"%>
- <p>From: <%= booking.start_date %></p>
- <p>To: <%= booking.end_date %></p>
- <% end %>
-
+<div class="container">
+<div class="col py-4"><h1> My bookings</h1></div>
+<div class="card-trip">
+    <% @bookings.each do |booking| %>
+      <%= image_tag (booking.offer.img_url), class: "card-img-top"%>
+        <div class="card-trip-infos">
+          <div>
+            <h2> <%= booking.offer.title%> </h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing"> <%= booking.offer.price %> € </h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      <% end %>
+  </div>
 <%= link_to "Back to offers", offers_path %>
+</div>
