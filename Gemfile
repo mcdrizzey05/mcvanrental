@@ -82,3 +82,6 @@ gem "devise"
 # Bootstrap forms
 gem "bootstrap", "~> 5.0"
 gem "bootstrap_form", "~> 5.1"
+
+# Cloudinary image upload
+gem "cloudinary"

@@ -3,7 +3,7 @@
     <div class="container-logo d-flex">
       <%= link_to "#", class: "navbar-brand" do %>
         <%= image_tag "https://static.vecteezy.com/system/resources/previews/004/852/840/non_2x/caravan-camper-travel-line-icon-illustration-logo-template-suitable-for-many-purposes-free-vector.jpg", class: "rounded-circle" %>
-      <p class="logo-text">mcvanrental</p>
+      <p class="logo-text">McVanRental</p>
       <% end %>
     </div>
 
@@ -26,10 +26,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link" %>
+            <%= link_to "Home", "/offers", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My account", "#", class: "nav-link" %>
+            <%= link_to "List a new offer", "/offers/new", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/122232541?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
