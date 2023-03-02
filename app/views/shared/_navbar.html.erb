@@ -9,10 +9,14 @@
 
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group d-flex">
-    <input class="form-control string required rounded-input" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat d-flex searchbtn">
-      <i class="fas fa-search"></i> Search
-    </button>
+  <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a van to rent"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   </div>
 <% end %>
 
