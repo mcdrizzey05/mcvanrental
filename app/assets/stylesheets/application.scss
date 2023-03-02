@@ -15,10 +15,10 @@
 @import "components/button";
 @import "components/new_offer";
 
-.container {
-  max-width:1000px;
-}
 
+.container {
+  max-width: 1000px;
+}
 .card-img-top {
   display: block;
   max-height:250px;
@@ -27,6 +27,8 @@
 }
 
 .card-img-offers {
+  display: block;
+  max-width: 700px;
   width: auto;
   height: auto;
 }
