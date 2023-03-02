@@ -1,10 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class="container-logo d-flex">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://static.vecteezy.com/system/resources/previews/004/852/840/non_2x/caravan-camper-travel-line-icon-illustration-logo-template-suitable-for-many-purposes-free-vector.jpg", class: "rounded-circle" %>
-      <p class="logo-text">McVanRental</p>
-      <% end %>
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1677749409/New_Project_u8b2ky.png" width="250px">
     </div>
 
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
@@ -41,9 +38,9 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/122232541?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Messages", "#", class: "dropdown-item" %>
+              <%= link_to "My profile", "/bookings", class: "dropdown-item" %>
               <%= link_to "View my bookings", "/bookings", class: "dropdown-item" %>
-              <%= link_to "Host your van", "#", class: "dropdown-item" %>
+              <%= link_to "List a new offer", "#", class: "dropdown-item" %>
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
