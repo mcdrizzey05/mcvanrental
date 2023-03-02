@@ -25,7 +25,7 @@
       <%= simple_form_for [@offer, @booking] do |f| %>
         <%= f.input :start_date, as: :date, html5: true %>
         <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit "Book now" %>
+        <%= f.submit "Book now", class: "main-btn-book" %>
       <% end %>
       </div>
       </div>
