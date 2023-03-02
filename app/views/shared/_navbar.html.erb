@@ -1,29 +1,28 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <div class="container-logo d-flex">
-      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1677749409/New_Project_u8b2ky.png" width="250px">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex">
+    <div class="container-logo justify-content-start">
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1677765296/New_Project_5_nzmdnv.png" width="387px">
     </div>
+    <div class="justify-content-center">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group d-flex search-input">
+          <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a van to rent"
+            %>
+            <%= submit_tag "Search", class: "search-btn" %>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
 
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group d-flex">
-  <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a van to rent"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-  </div>
-<% end %>
 
+      <%#<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> %>
 
-<%#
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> %>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
@@ -54,7 +53,7 @@
               <a data-bs-dismiss="alert" aria-label="Close">
                <i class="fas fa-times"></i>
               </a>
-          </div> %>
+        </div> %>
       </ul>
     </div>
   </div>

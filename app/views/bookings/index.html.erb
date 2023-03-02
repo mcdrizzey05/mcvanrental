@@ -1,17 +1,21 @@
 <div class="container">
-<div class="col py-4"><h1> My bookings</h1></div>
-<div class="card-trip">
+  <div class="col py-4"><h1> My bookings</h1></div>
+   <br>
+   <br>
+   <div class="card-product">
     <% @bookings.each do |booking| %>
-      <%= cl_image_tag booking.offer.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
-        <div class="card-trip-infos">
+      <img src=https://res.cloudinary.com/diafrrnkz/image/upload/v1677750580/development/sd3me0792s8n3ux1rwuboqej5zec.webp, height: 300, width: 400, crop: :fill class="card-product-img"/>
+        <div class="card-product-infos">
+        <div class="information">
           <div>
             <h2><%= booking.offer.title%></h2>
             <p><%= booking.offer.description %></p>
+            <p>Booked from: <%= booking.start_date.strftime("%d-%m-%Y") %> until <%=  booking.end_date.strftime("%d-%m-%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
           </div>
-          <h2 class="card-trip-pricing"> <%= booking.offer.price %> € </h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <h2 class="card-product-pricing"> <%= booking.offer.price %> € </h2>
         </div>
       <% end %>
   </div>
-<%= link_to "Back to offers", offers_path %>
+  </div>
+  <button type="button" class="btn btn-primary"><%= link_to "Back to offers", offers_path %></button>
 </div>

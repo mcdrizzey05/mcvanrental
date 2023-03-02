@@ -12,6 +12,12 @@
 @import "components/index";
 @import "components/index_booking";
 @import "pages/index";
+@import "components/button";
+@import "components/new_offer";
+
+.container {
+  max-width:1000px;
+}
 
 .card-img-top {
   display: block;
@@ -21,8 +27,51 @@
 }
 
 .card-img-offers {
-  display: block;
-  max-width:700px;
   width: auto;
   height: auto;
+}
+
+.offer-description {
+  margin: 0px;
+  line-height: 0;
+}
+
+.container-offer {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+.offer-img {
+  position: relative;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.offer-btn {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button a:hover {
+  color: white;
+}
+
+.description-card {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
 }

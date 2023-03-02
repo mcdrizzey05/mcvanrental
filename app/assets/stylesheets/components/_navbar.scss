@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height:85px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,11 +16,19 @@
   display: inline-block;
 }
 
-.searchbtn {
-  gap: 10px;
-  align-items: center;
+.search-btn {
+  background-color: #006152;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  border-radius: 3px;
+  margin-left: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.rounded-input {
-  border-radius: 35px;
+.search-input {
+  border-radius: 3px;
+  padding: 4px 32px;
 }
