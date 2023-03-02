@@ -14,22 +14,10 @@
                 <p class="my-0"><%= offer.location %></p>
               </div>
               <div class="card-footer">
-                <small class="text-muted"> € <%= offer.price %>/night</small>
+                <small class="text-muted"> € <%= number_with_precision(offer.price, precision: 2) %>/night</small>
               </div>
-
           </div>
         <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to offer.title, offer_path(offer.id) %></h5>
-              <p class="card-text"><%= offer.description %></p>
-              <button type="button"><%= link_to "See more", offer_path(offer.id), class: "btn btn-inverse" %></button>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Daily price: € <%= number_with_precision(offer.price, precision: 2) %></small>
-            </div>
-        </div>
-    </div>
-
     <% end %>
   </div>
 </div>
