@@ -1,21 +1,27 @@
 <div class="container">
-  <div class="col py-4"><h1> My bookings</h1></div>
-   <br>
-   <br>
-   <div class="card-product">
-    <% @bookings.each do |booking| %>
-      <img src=https://res.cloudinary.com/diafrrnkz/image/upload/v1677750580/development/sd3me0792s8n3ux1rwuboqej5zec.webp, height: 300, width: 400, crop: :fill class="card-product-img"/>
-        <div class="card-product-infos">
-        <div class="information">
-          <div>
-            <h2><%= booking.offer.title%></h2>
-            <p><%= booking.offer.description %></p>
-            <p>Booked from: <%= booking.start_date.strftime("%d-%m-%Y") %> until <%=  booking.end_date.strftime("%d-%m-%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
+  <div class="row">
+    <div class="col-10 offset-1 py-4">
+      <h1> My bookings</h1>
+      <% @bookings.each do |booking| %>
+        <div class="card-product mx-auto">
+          <img src=https://res.cloudinary.com/diafrrnkz/image/upload/v1677750580/development/sd3me0792s8n3ux1rwuboqej5zec.webp, height: 300, width: 400, crop: :fill class="card-product-img"/>
+          <div class="card-product-infos">
+            <div class="information">
+              <div>
+                <h2><%= booking.offer.title%></h2>
+                <p><%= booking.offer.description %></p>
+                <p>Booked from: <%= booking.start_date.strftime("%d-%m-%Y") %> until <%=  booking.end_date.strftime("%d-%m-%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
+                <p>Daily rate: € <%= number_with_precision(booking.offer.price, precision: 2) %></p>
+              </div>
+            </div>
+            <div class="total-price">
+              <h6>Total price: € <%= number_with_precision((booking.end_date - booking.start_date).to_i*booking.offer.price, precision: 2) %></h6>
+            </div>
           </div>
-          <h2 class="card-product-pricing"> <%= booking.offer.price %> € </h2>
         </div>
+
       <% end %>
+      <button type="button" class="btn btn-primary mx-auto"><%= link_to "Back to offers", offers_path %></button>
+    </div>
   </div>
-  </div>
-  <button type="button" class="btn btn-primary"><%= link_to "Back to offers", offers_path %></button>
 </div>

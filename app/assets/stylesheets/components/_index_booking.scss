@@ -1,3 +1,4 @@
+
 .card-product {
   overflow: hidden;
   height: 150px;
@@ -5,13 +6,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 10px 0;
-  width: fit-content;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5px;
 }
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 10px;
 }
 
 .card-product p {
@@ -34,4 +36,16 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
+}
+h6 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn-primary{
+  margin-top: 10px;
+}
+.btn-primary:hover{
+  color: #ddf7aa;
+  background-color: #95b0b6;
+  border-color: #455963;
 }
