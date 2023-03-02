@@ -3,7 +3,9 @@
    <% @offers.each do |offer| %>
       <div class="col-4 d-flex align-items-stretch">
         <div class="col card">
+        <% if offer.photo.attached? %>
           <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+        <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= link_to offer.title, offer_path(offer.id) %></h5>
               <p class="card-text"><%= offer.description %></p>
