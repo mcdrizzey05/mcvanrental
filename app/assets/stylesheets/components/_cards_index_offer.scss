@@ -1,0 +1,21 @@
+
+
+.card {
+  width: 400px;
+  // height: 387px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // align-items: stretch;
+}
+
+.container > * {
+  flex-grow: 1;
+  flex-basis: 0;
+}
