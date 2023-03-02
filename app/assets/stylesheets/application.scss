@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "config/layouts";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -10,11 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/button";
+@import "components/new_offer";
+
 
 .container {
-  max-width:1000px;
+  max-width: 1000px;
 }
-
 .card-img-top {
   display: block;
   max-height:250px;
@@ -23,6 +26,8 @@
 }
 
 .card-img-offers {
+  display: block;
+  max-width: 700px;
   width: auto;
   height: auto;
 }
