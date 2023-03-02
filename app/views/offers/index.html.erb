@@ -12,7 +12,7 @@
               <button type="button"><%= link_to "See more", offer_path(offer.id), class: "btn btn-inverse" %></button>
             </div>
             <div class="card-footer">
-              <small class="text-muted">Daily price: € <%= offer.price %></small>
+              <small class="text-muted">Daily price: € <%= number_with_precision(offer.price, precision: 2) %></small>
             </div>
         </div>
     </div>
