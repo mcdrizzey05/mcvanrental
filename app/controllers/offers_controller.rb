@@ -1,7 +1,15 @@
 class OffersController < ApplicationController
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        offers.title @@ :query
+        OR offers.description @@ :query
+      SQL
+      @offers = Offer.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
   end
 
   def show

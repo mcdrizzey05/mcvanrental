@@ -85,3 +85,6 @@ gem "bootstrap_form", "~> 5.1"
 
 # Cloudinary image upload
 gem "cloudinary"
+
+# PG search
+gem "pg_search"
