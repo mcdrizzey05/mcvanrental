@@ -1,15 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col py-4">
+    <div class="col pt-4 d-flex justify-content-start">
       <h1><%= @offer.title %></h1>
     </div>
-      <div class="row">
-        <div class="col">
-          <%= cl_image_tag @offer.photo.key, height: 300, width: 400, crop: :fill %>
-          <h3><%= @offer.description %></h3>
-          <h5>Located in:<%= @offer.location %></h5>
-          <h5>Price: €<%= @offer.price %>/night</h5>
-          <button type="button"><%= link_to "Book now!", new_offer_booking_path(@offer.id), class: "btn btn-inverse" %></button>
-        </div>
+    <div class="col pt-5 d-flex justify-content-end">
+      <h4>€<%= @offer.price %>/night</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-start">
+      <p>Located in: <%= @offer.location %>, Germany</p>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <p>Offered by: <%= @offer.user.name %></p>
+    </div>
+  </div>
+
+  <div class="row offer-img" style="background-image: url('<%= cl_image_path @offer.photo.key %>')">
+    <div class="col offer-btn">
+      <div class="description-card">
+       <%= @offer.description %>
+      </div>
+      <button type="button" class="btn btn-primary btn-md"><%= link_to "Book now!", new_offer_booking_path(@offer.id) %></button>
+    </div>
   </div>
 </div>
