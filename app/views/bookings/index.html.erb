@@ -9,7 +9,7 @@
             <div class="information">
                 <h2 class="mx-0"><%= booking.offer.title%></h2>
                 <p><%= booking.offer.description %></p>
-                <p>Booked from: <%= booking.start_date.strftime("%d-%m-%Y") %> until <%=  booking.end_date.strftime("%d-%m-%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
+                <p>Booked from: <%= booking.start_date.strftime("%d.%m.%Y") %> until <%=  booking.end_date.strftime("%d-%m-%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
                 <p>Daily rate: € <%= number_with_precision(booking.offer.price, precision: 2) %></p>
               </div>
             <div class="total-price mt-2">
