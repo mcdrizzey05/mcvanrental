@@ -4,7 +4,7 @@
         <%= link_to offer_path(offer.id), class:"mb-1 text-decoration-none text-reset" do %>
           <div class="col card my-2">
             <% if offer.photo.attached? %>
-              <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag offer.photo.key.to_s, height: 300, width: 400, crop: :fill %>
             <% else %>
               <%= image_tag("https://res.cloudinary.com/diafrrnkz/image/upload/v1677750580/development/sd3me0792s8n3ux1rwuboqej5zec.webp", size: "400x300") %>
             <% end %>
