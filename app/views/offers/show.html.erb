@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="row offer-img" style="background-image: url('<%= cl_image_path @offer.photo.key %>')">
+  <div class="row offer-img" style="background-image: url('<%= cl_image_path @offer.photo.key.to_s %>')">
     <div class="col offer-btn">
       <div class="description-card">
        <%= @offer.description %>
