@@ -4,7 +4,7 @@
       <h1>My bookings</h1>
       <% @bookings.each do |booking| %>
         <div class="card-product mx-auto">
-        <%= cl_image_tag booking.offer.photo.key, height: 300, width: 300, crop: :fill %>
+        <%= cl_image_tag booking.offer.photo.key.to_s, height: 300, width: 300, crop: :fill %>
           <div class="card-product-infos">
             <div class="information">
                 <h2 class="mx-0"><%= booking.offer.title%></h2>
