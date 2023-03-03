@@ -1,7 +1,8 @@
 <div class="container">
+
   <div class="row">
     <div class="col-10 offset-1 py-4">
-      <h1>My bookings</h1>
+      <h1>My trips</h1>
       <% @bookings.each do |booking| %>
         <div class="card-product mx-auto">
         <%= cl_image_tag booking.offer.photo.key.to_s, height: 300, width: 300, crop: :fill %>
@@ -11,15 +12,38 @@
                 <p><%= booking.offer.description %></p>
                 <p>Booked from: <%= booking.start_date.strftime("%d.%m.%Y") %> until <%=  booking.end_date.strftime("%d.%m.%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
                 <p>Daily rate: € <%= number_with_precision(booking.offer.price, precision: 2) %></p>
-              </div>
+            </div>
             <div class="total-price mt-2">
               <h6>Total price: € <%= number_with_precision((booking.end_date - booking.start_date).to_i*booking.offer.price, precision: 2) %></h6>
             </div>
           </div>
         </div>
-
-      <% end %>
-      <button type="button" class="main-btn mt-4"><%= link_to "Back to offers", offers_path %></button>
+        <% end %>
+      </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col-10 offset-1 py-4">
+        <h1>My booked offers</h1>
+        <% @bookings_owner.each do |booking| %>
+          <div class="card-product mx-auto">
+            <%= cl_image_tag booking.offer.photo.key, height: 300, width: 300, crop: :fill %>
+              <div class="card-product-infos">
+                <div class="information">
+                  <h2 class="mx-0"><%= booking.offer.title%></h2>
+                  <p><%= booking.offer.description %></p>
+                  <p>Booked from: <%= booking.start_date.strftime("%d.%m.%Y") %> until <%=  booking.end_date.strftime("%d.%m.%Y") %><em>(<%= (booking.end_date - booking.start_date).to_i %> days)</em></p>
+                  <p>Daily rate: € <%= number_with_precision(booking.offer.price, precision: 2) %></p>
+                </div>
+              <div class="total-price mt-2">
+                <h6>Total price: € <%= number_with_precision((booking.end_date - booking.start_date).to_i*booking.offer.price, precision: 2) %></h6>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="main-btn mt-4 "><%= link_to "Back to offers", offers_path %></button>
+          </div>
+        </div>
+      </div>
 </div>

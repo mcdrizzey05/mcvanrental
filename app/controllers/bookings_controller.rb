@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
 
   def index
     # @offers = current_user.offer
-    @bookings = Booking.where(user: current_user)
-    # @owned_bookings = Booking.where(user: current_user) == Booking.user_id
+    @bookings = current_user.bookings
+    @bookings_owner = current_user.bookings_as_owner
   end
 
   def new
